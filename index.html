@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFSCee - C Programming Visualization Tool</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container">
+    <div class="banner">
+        <img src="/api/placeholder/40/40" alt="IFSCee Logo" />
+        IFSCee - C Programming Visualization Tool
+    </div>
+
+    <div class="code-editor">
+        <textarea class="code-area" id="code-input"></textarea>
+        <div class="navigation-bar">
+            <div>
+                <select id="example-selector" class="example-selector">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
+                <button class="run-button" id="run-btn">Run</button>
+                <div class="auto-control">
+                    <button class="nav-button play-button" id="play-btn">▶ Play</button>
+                    <input type="range" id="speed-control" min="1" max="10" value="5" class="speed-slider" title="Execution Speed">
+                </div>
+                <button class="nav-button" id="first-btn" disabled>First</button>
+                <button class="nav-button" id="prev-btn" disabled>Previous</button>
+                <button class="nav-button" id="next-btn" disabled>Next</button>
+                <button class="nav-button" id="last-btn" disabled>Last</button>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="step-counter" id="step-counter">Step 0 of 0</div>
+        </div>
+    </div>
+
+    <div class="memory-visualizer">
+        <div class="section-header">MEMORY VISUALIZER</div>
+        <div class="memory-container" id="memory-container">
+            <!-- Memory items will be added dynamically by JavaScript -->
+            <div style="text-align: center; padding: 20px; color: #888;">
+                Run the code to see memory visualization
+            </div>
+        </div>
+    </div>
+
+    <div class="stack">
+        <div class="section-header">STACK</div>
+        <div id="stack-container">
+            <!-- Stack frames will be added dynamically -->
+            <div style="text-align: center; padding: 20px; color: #888;">
+                Run the code to see stack frames
+            </div>
+        </div>
+    </div>
+
+    <div class="input-area">
+        <div class="section-header">INPUT AREA</div>
+        <textarea id="input-area" style="width: 100%; height: 70px; resize: none; font-family: monospace;"></textarea>
+    </div>
+
+    <div class="output-area">
+        <div class="section-header">OUTPUT AREA</div>
+        <div id="output-console" class="console-output"></div>
+    </div>
+
+    <div class="heap">
+        <div class="section-header">HEAP</div>
+        <div id="heap-container">
+            <div id="heap-empty-message" style="text-align: center; padding: 20px; color: #888;">
+                No heap allocations yet
+            </div>
+        </div>
+    </div>
+
+    <div class="tokens">
+        <div class="section-header">TOKENS</div>
+        <div id="token-container" class="token-container">
+            <!-- Tokens will be added dynamically -->
+            <div style="text-align: center; padding: 20px; color: #888;">
+                Run the code to see tokens
+            </div>
+        </div>
+    </div>
+
+    <div class="ast-visualizer">
+        <div class="section-header">AST VISUALIZER</div>
+        <div id="ast-container" class="ast-container">
+            <!-- AST nodes will be added dynamically -->
+            <div style="text-align: center; padding: 20px; color: #888;">
+                Run the code to see AST visualization
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Module imports -->
+<script type="module" src="main.js"></script>
+</body>
+</html>
